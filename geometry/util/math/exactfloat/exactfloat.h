@@ -556,7 +556,7 @@ class ExactFloat {
 };
 
 inline std::unique_ptr<BIGNUM, BIGNUM_deleter> make_BN_new() {
-  std::unique_ptr<BIGNUM, BIGNUM_deleter> ret(BN_new(), BIGNUM_deleter{});
+  std::unique_ptr<BIGNUM, BIGNUM_deleter> ret(BN_new(), BIGNUM_deleter());
   // guarantee(ret.get() != nullptr);
   return ret;
 }
